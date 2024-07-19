@@ -1,7 +1,7 @@
-export const formatDateToLocal = (dateStr?: string) => {
-  // Use the current date if dateStr is not provided
-  const date = dateStr ? new Date(dateStr) : new Date();
+import { format } from "date-fns";
 
-  // Return the date in YYYY-MM-DD format
-  return date.toISOString().split("T")[0];
-};
+export function getFirst20Words(text: string): string {
+  const words = text.split(" ");
+  const first20Words = words.slice(0, 20);
+  return first20Words.join(" ") + (words.length > 20 ? "..." : "");
+}

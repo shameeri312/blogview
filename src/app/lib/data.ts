@@ -1,22 +1,21 @@
-export const categories = [
-  { id: 1, name: "Technology" },
-  { id: 2, name: "Health & Wellness" },
-  { id: 3, name: "Travel" },
-  { id: 4, name: "Food & Recipes" },
-  { id: 5, name: "Fashion & Style" },
-  { id: 6, name: "Finance" },
-  { id: 7, name: "Business & Entrepreneurship" },
-  { id: 8, name: "Art & Culture" },
-  { id: 9, name: "Books & Literature" },
-  { id: 10, name: "Sports & Fitness" },
-  { id: 11, name: "Home & Decor" },
-  { id: 12, name: "Education" },
-  { id: 13, name: "Music" },
-  { id: 14, name: "Personal Development" },
-  { id: 15, name: "Science" },
-  { id: 16, name: "Gardening" },
-  { id: 17, name: "Parenting" },
-  { id: 18, name: "History" },
-  { id: 19, name: "Photography" },
-  { id: 20, name: "Nature & Environment" },
-];
+import { sql } from "@vercel/postgres";
+import { Posts } from "./definitions";
+
+export async function fetchBlogs() {
+  try {
+    const data = await sql<Posts>`
+    SELECT 
+      posts.*, 
+      users_a.username AS user_name, 
+      categories.name AS category_name
+        FROM 
+          posts
+        JOIN 
+          users_a ON posts.user_id = users_a.user_id
+        JOIN 
+      categories ON posts.category_id = categories.category_id;`;
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+  }
+}

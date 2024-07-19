@@ -4,7 +4,7 @@ import Image from "next/image";
 import { fetchBlogs } from "../lib/data";
 import { Posts } from "../lib/definitions";
 import { format, getDate } from "date-fns";
-import { FaBookBookmark, FaStar } from "react-icons/fa6";
+import { FaBookmark } from "react-icons/fa6";
 
 export const CardWrapper = async () => {
   const blogs = await fetchBlogs();
@@ -47,14 +47,14 @@ const Card = ({
         <h1 className="font-bold">{title}</h1>
       </div>
       <p className="text-[13px]">{getFirst20Words(content)}</p>
-      <div className="flex gap-2 justify-between">
+      <div className="flex gap-2 justify-between w-full">
         <Image src={"/user.svg"} alt="vercel logo" width={32} height={32} />
-        <div className="flex justify-between ">
+        <div className="flex justify-between items-center w-full border ">
           <p className="flex flex-col ">
             <h2 className="text-sm font-bold capitalize">{user_name}</h2>
             <span className="text-[10px]">{created_at}</span>
           </p>
-          <FaStar />
+          <FaBookmark />
         </div>
       </div>
     </div>

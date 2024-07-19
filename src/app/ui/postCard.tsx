@@ -9,7 +9,7 @@ import { FaBookmark } from "react-icons/fa6";
 export const CardWrapper = async () => {
   const blogs = await fetchBlogs();
   return (
-    <div className="container mx-auto grid grid-cols-4 gap-5 py-10">
+    <div className="container mx-auto gap-5 px-10 sm:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
       {blogs?.map((blog) => {
         return (
           <div key={blog.post_id}>
@@ -41,19 +41,26 @@ const Card = ({
   return (
     <div className="flex flex-col items-start justify-between gap-2 p-4 border bg-slate-100/0 border-slate-600/10 shadow-lg shadow-slate-300/70 rounded-xl h-full">
       <div className="flex flex-col items-start gap-2">
-        <h3 className="bg-slate-500 py-[1px] px-2 rounded-full text-sm text-white">
+        <h3 className="bg-slate-400 py-[1px] px-3 rounded-full text-sm text-white sm:text-base md:text-base">
           {category_name}
         </h3>
-        <h1 className="font-bold">{title}</h1>
+        <h1 className="font-bold text-lg sm:text-xl md:text-2xl">{title}</h1>
       </div>
-      <p className="text-[13px]">{getFirst20Words(content)}</p>
+      <div className="h-full">
+        <p className="text-[13px] sm:text-sm md:text-base">
+          {getFirst20Words(content)}
+        </p>
+      </div>
+      <p className="border-2 w-full"></p>
       <div className="flex gap-2 justify-between w-full">
-        <Image src={"/user.svg"} alt="vercel logo" width={32} height={32} />
-        <div className="flex justify-between items-center w-full ">
-          <p className="flex flex-col ">
-            <h2 className="text-sm font-bold capitalize">{user_name}</h2>
-            <span className="text-[10px]">{created_at}</span>
-          </p>
+        <Image src={"/user.svg"} alt="user icon" width={32} height={32} />
+        <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col">
+            <h2 className="text-sm font-bold capitalize sm:text-base">
+              {user_name}
+            </h2>
+            <span className="sm:text-xs">{created_at}</span>
+          </div>
           <FaBookmark className="text-slate-600/40" />
         </div>
       </div>

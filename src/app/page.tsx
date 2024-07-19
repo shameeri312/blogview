@@ -1,22 +1,22 @@
-import Image from "next/image";
-import Navbar from "./ui/navbar";
 import clsx from "clsx";
 import { satisfy } from "./ui/fonts";
 import Posts from "./ui/posts";
+import Controls from "./ui/controls";
 
 export default function Home() {
   return (
     <>
       <main className="">
-        <div>
+        <div className="flex flex-col items-center relative">
           <h1
             className={clsx(
-              `text-xl sm:text-5xl lg:text-8xl text-center`,
+              `text-xl sm:text-3xl lg:text-5xl inline`,
               satisfy.className
             )}
           >
-            Blog Views
+            Blog View
           </h1>
+          <Controls />
         </div>
       </main>
       <Posts />

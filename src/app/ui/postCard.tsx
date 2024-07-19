@@ -39,7 +39,7 @@ const Card = ({
   created_at,
 }: Posts) => {
   return (
-    <div className="flex flex-col items-start justify-between gap-2 p-4 border border-slate-600 rounded-xl h-full">
+    <div className="flex flex-col items-start justify-between gap-2 p-4 border bg-slate-100 border-slate-600/30 rounded-xl h-full">
       <div className="flex flex-col items-start gap-2">
         <h3 className="bg-slate-500 py-[1px] px-2 rounded-full text-sm text-white">
           {category_name}
@@ -49,12 +49,12 @@ const Card = ({
       <p className="text-[13px]">{getFirst20Words(content)}</p>
       <div className="flex gap-2 justify-between w-full">
         <Image src={"/user.svg"} alt="vercel logo" width={32} height={32} />
-        <div className="flex justify-between items-center w-full border ">
+        <div className="flex justify-between items-center w-full ">
           <p className="flex flex-col ">
             <h2 className="text-sm font-bold capitalize">{user_name}</h2>
             <span className="text-[10px]">{created_at}</span>
           </p>
-          <FaBookmark />
+          <FaBookmark className="text-slate-600/40" />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import { FaBookmark } from "react-icons/fa6";
 export const CardWrapper = async () => {
   const blogs = await fetchBlogs();
   return (
-    <div className="container mx-auto border grid grid-cols-4 gap-5 py-10">
+    <div className="container mx-auto grid grid-cols-4 gap-5 py-10">
       {blogs?.map((blog) => {
         return (
           <div key={blog.post_id}>
@@ -39,7 +39,7 @@ const Card = ({
   created_at,
 }: Posts) => {
   return (
-    <div className="flex flex-col items-start justify-between gap-2 p-4 border bg-slate-100 border-slate-600/30 rounded-xl h-full">
+    <div className="flex flex-col items-start justify-between gap-2 p-4 border bg-slate-100/0 border-slate-600/10 shadow-lg shadow-slate-300/70 rounded-xl h-full">
       <div className="flex flex-col items-start gap-2">
         <h3 className="bg-slate-500 py-[1px] px-2 rounded-full text-sm text-white">
           {category_name}

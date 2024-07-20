@@ -1,8 +1,20 @@
 import clsx from "clsx";
 import { satisfy } from "./ui/fonts";
 import Controls from "./ui/controls";
+import { Suspense } from "react";
+import Loader from "./ui/loader";
+import { CardWrapper } from "./ui/postCard";
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams?: {
+    postId?: string;
+  };
+}) {
+  const id = Number(searchParams?.postId);
+  console.log("The id is:" + id);
+
   return (
     <>
       <main className="">
@@ -16,6 +28,9 @@ export default function Home() {
             Blog View
           </h1>
           <Controls />
+          <Suspense fallback={<Loader />}>
+            <CardWrapper id={id} />;
+          </Suspense>
         </div>
       </main>
     </>

@@ -3,15 +3,16 @@ import React, { useEffect, useState } from "react";
 import { Categories } from "../lib/definitions";
 import clsx from "clsx";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 const Button = ({ category_id, name }: Categories) => {
-  const [active, setActive] = useState<number>(1);
+  const [active, setActive] = useState<number>(0);
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
-
   const handleClick = (category_id: number) => {
     const params = new URLSearchParams(searchParams);
+
     if (category_id) {
       params.set("postId", JSON.stringify(category_id));
     } else {
@@ -25,6 +26,8 @@ const Button = ({ category_id, name }: Categories) => {
     const postId = searchParams.get("postId");
     if (postId) {
       setActive(Number(postId));
+    } else {
+      setActive(0);
     }
   }, [searchParams]);
 

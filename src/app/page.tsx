@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { satisfy } from "./ui/fonts";
-import Posts from "./ui/posts";
 import Controls from "./ui/controls";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
           <Controls />
         </div>
       </main>
-      <Posts />
     </>
   );
 }

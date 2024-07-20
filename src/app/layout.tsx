@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { mont } from "./ui/fonts";
+import { satisfy } from "./ui/fonts";
 import Navbar from "./ui/navbar";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={mont.className}>
+      <body className={satisfy.className}>
         <Navbar />
         {children}
       </body>

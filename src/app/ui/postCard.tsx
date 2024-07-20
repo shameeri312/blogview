@@ -1,13 +1,14 @@
-import React from "react";
 import { getFirst20Words } from "../lib/utils";
 import Image from "next/image";
 import { fetchBlogs } from "../lib/data";
 import { Posts } from "../lib/definitions";
-import { format, getDate } from "date-fns";
+import { format } from "date-fns";
 import { FaBookmark } from "react-icons/fa6";
 
-export const CardWrapper = async () => {
-  const blogs = await fetchBlogs();
+export const CardWrapper = async ({ id }: { id: number }) => {
+  console.log("Fetched id is:" + id);
+  const blogs = await fetchBlogs(id);
+
   return (
     <div className="container mx-auto gap-5 px-10 sm:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
       {blogs?.map((blog) => {
@@ -18,7 +19,7 @@ export const CardWrapper = async () => {
               content={blog.content}
               user_name={blog.user_name}
               category_name={blog.category_name}
-              post_id={0}
+              post_id={blog.post_id}
               user_id={0}
               created_at={format(new Date(blog.created_at), "MMMM d, yyyy")}
               updated_at={""}
@@ -33,6 +34,7 @@ export const CardWrapper = async () => {
 
 const Card = ({
   title,
+  post_id,
   content,
   user_name,
   category_name,

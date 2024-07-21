@@ -7,7 +7,7 @@ export const CardWrapper = async ({ id }: { id: number }) => {
   const blogs = await fetchBlogs(id);
 
   return (
-    <div className="container mx-auto gap-5 px-10 sm:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
+    <div className="container mx-auto gap-5 px-5 sm:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
       {blogs?.map((blog) => {
         return (
           <div key={blog.post_id}>

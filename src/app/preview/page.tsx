@@ -34,8 +34,8 @@ const Page = async ({
         href={"/"}
         className="flex border border-slate-500 px-4 py-2 hover:text-white hover:border-transparent hover:bg-slate-500 rounded-full items-center gap-2"
       >
-        <FaChevronLeft />
-        <h2 className="text-2xl">Go back</h2>
+        <FaChevronLeft className="text-base" />
+        <h2>Go back</h2>
       </Link>
 
       <div className="py-10 w-full lg:w-3/4 xl:w-2/3 flex flex-col gap-3 px-6">
@@ -43,13 +43,13 @@ const Page = async ({
         <Image
           src={"/blog-img.jpg"}
           alt="blog-img"
-          className="w-full h-[400px] xl:h-[600px] object-cover"
+          className="w-full h-[250px] sm:h-[400px] xl:h-[600px] object-cover"
           width={10000}
           height={100}
         />
         <div className="flex gap-3 items-center pt-5">
           <strong className="tracking-wide">Category: </strong>
-          <h4 className="tracking-wide px-3 py-[2px] bg-slate-400 rounded-full text-white">
+          <h4 className="tracking-wide px-3 py-[2px] bg-slate-500 rounded-full text-white">
             {post?.category_name}{" "}
           </h4>
         </div>

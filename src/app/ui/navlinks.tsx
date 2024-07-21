@@ -9,7 +9,7 @@ const links = [
 
 const Navlinks = () => {
   return (
-    <ul className="flex flex-col md:flex-row  gap-20 mb-40">
+    <ul className="flex flex-col md:flex-row gap-20 mb-40">
       {links.map((link, index) => (
         <li key={index}>
           <Link href={link.path} className="capitalize text-3xl">

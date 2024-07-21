@@ -1,6 +1,5 @@
 export const posts = [
   {
-    post_id: 1121,
     user_id: 1,
     title: "Exploring the Wonders of Space",
     content:
@@ -9,7 +8,6 @@ export const posts = [
     category_id: 1,
   },
   {
-    post_id: 1122,
     user_id: 2,
     title: "The Art of Baking Bread at Home",
     content:
@@ -18,7 +16,6 @@ export const posts = [
     category_id: 2,
   },
   {
-    post_id: 1123,
     user_id: 2,
     title: "Top 10 Travel Destinations for 2024",
     content:
@@ -27,7 +24,6 @@ export const posts = [
     category_id: 3,
   },
   {
-    post_id: 1124,
     user_id: 1,
     title: "Understanding Quantum Computing",
     content:
@@ -36,7 +32,6 @@ export const posts = [
     category_id: 4,
   },
   {
-    post_id: 1125,
     user_id: 2,
     title: "Mindfulness Practices for Everyday Life",
     content:
@@ -45,7 +40,6 @@ export const posts = [
     category_id: 5,
   },
   {
-    post_id: 1126,
     user_id: 1,
     title: "A Beginner's Guide to Investing in Stocks",
     content:

@@ -48,7 +48,7 @@ export async function fetchCategories() {
   try {
     const data = await sql<Categories>`
     SELECT * FROM categories;`;
-    return data.rows;
+    return data.rows || [];
   } catch (error) {
     console.error("Database Error:", error);
   }

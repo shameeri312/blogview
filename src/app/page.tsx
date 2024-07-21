@@ -17,7 +17,7 @@ export default function Home({
 
   return (
     <>
-      <main className="">
+      <main>
         <div className="flex flex-col items-center relative">
           <h1
             className={clsx(

@@ -9,10 +9,12 @@ export type Posts = {
   category_name: string;
   user_name: string;
 };
+
 export type Categories = {
   category_id: number;
   name: string;
 };
+
 export type Preview = {
   title: string;
   content: string;

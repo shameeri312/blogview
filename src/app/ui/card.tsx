@@ -62,7 +62,8 @@ const Card = ({
             {getFirst20Words(content)}
           </p>
         </div>
-        <div className="border p-2 rounded-md bg-slate-200 flex gap-2 justify-between w-full">
+        <p className="w-full border my-4"></p>
+        <div className="flex gap-2 justify-between w-full">
           <Image src={"/user.svg"} alt="user icon" width={32} height={32} />
           <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">

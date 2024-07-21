@@ -21,7 +21,7 @@ export default function Home({
         <div className="flex flex-col items-center relative">
           <h1
             className={clsx(
-              `text-xl sm:text-3xl lg:text-5xl inline`,
+              `text-2xl sm:text-3xl lg:text-5xl inline`,
               satisfy.className
             )}
           >

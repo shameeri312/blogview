@@ -8,7 +8,7 @@ const AddBlog = () => {
     <div className="container mx-auto flex items-center flex-col">
       <h1
         className={clsx(
-          `text-xl sm:text-5xl lg:text-8xl text-center`,
+          `text-2xl sm:text-3xl lg:text-5xl inline`,
           satisfy.className
         )}
       >

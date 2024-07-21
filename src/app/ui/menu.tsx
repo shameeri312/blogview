@@ -3,10 +3,10 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import styles from "./css/menu.module.css";
 
-const Menu = () => {
+const Menu = ({ state }: { state: boolean }) => {
   const [menuState, changeState] = useState(false);
   const handleChange = () => {
-    menuState ? changeState(false) : changeState(true);
+    changeState(!state);
   };
 
   return (

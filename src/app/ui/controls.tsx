@@ -7,7 +7,7 @@ const Controls = async () => {
 
   return (
     <div>
-      <ul className="flex flex-wrap gap-2 sm:gap-5 justify-center pt-5 px-10">
+      <ul className="flex flex-wrap gap-2 sm:gap-5 justify-center pt-10 px-10">
         <Button category_id={0} name={"All"} />
         {categories?.map((category, i) => {
           return (

@@ -13,3 +13,10 @@ export type Categories = {
   category_id: number;
   name: string;
 };
+export type Preview = {
+  title: string;
+  content: string;
+  created_at: string;
+  user_name: string;
+  category_name: string;
+};

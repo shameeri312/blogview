@@ -34,9 +34,9 @@ const Button = ({ category_id, name }: Categories) => {
   return (
     <button
       onClick={() => handleClick(category_id)}
-      className={clsx("border border-slate-500/30 rounded-full px-3 py-[2px]", {
-        "bg-slate-500/70 text-white": category_id === active,
-        "text-slate-500": category_id !== active,
+      className={clsx("border border-slate-500 rounded-full px-4 py-2", {
+        "bg-slate-500 text-white": category_id === active,
+        "text-slate-700": category_id !== active,
       })}
     >
       {name}

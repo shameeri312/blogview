@@ -44,6 +44,7 @@ const Card = ({
       <Image
         src={"/blog-img.jpg"}
         className="object-cover h-[200px]"
+        onClick={() => handleClick(post_id)}
         alt="blog-img"
         width={1000}
         height={0}

@@ -8,6 +8,7 @@ export async function fetchBlogs(category_id: number) {
   try {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
+    console.log("Fetching: " + category_id);
     const data =
       category_id > 0
         ? await sql<Posts>`

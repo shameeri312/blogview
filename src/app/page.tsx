@@ -13,7 +13,6 @@ export default function Home({
   };
 }) {
   const id = Number(searchParams?.postId);
-  console.log("The id is:" + id);
 
   return (
     <>

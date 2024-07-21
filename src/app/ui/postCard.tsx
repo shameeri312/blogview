@@ -3,7 +3,6 @@ import { format } from "date-fns";
 import Card from "./card";
 
 export const CardWrapper = async ({ id }: { id: number }) => {
-  console.log("Fetched id is:" + id);
   const blogs = await fetchBlogs(id);
 
   return (
